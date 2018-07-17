@@ -5,11 +5,12 @@
       lineinfile:
         path: /etc/rsyslog.conf
         regexp: '^#*.* @@remote-host:514'
-        line: "*.* @@monitoring.{{ lookup('env', 'HMPPS_DOMAIN') }}:2514
+        line: "*.* @@monitoring.{{ lookup('env', 'HMPPS_DOMAIN') }}:2514"
       become: true
 
     - name: Restart rsyslog
       service:
         name: rsyslog
         state: restarted
+      become: true
   when: ansible_env.HMPPS_DOMAIN|default(False)
