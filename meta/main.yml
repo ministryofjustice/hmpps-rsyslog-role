@@ -1,0 +1,8 @@
+galaxy_info:
+  author: HMPPS Engineering Team
+  description: Rsyslog enabler for Amazon Linux2 based instances
+  company: Ministry of Justice
+  license: MIT
+
+  min_ansible_version: 2.5
+  galaxy_tags: []
